@@ -4,6 +4,7 @@ import BlogCard from "../../components/blogCard/BlogCard";
 import {blogSection} from "../../portfolio";
 import {Fade} from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
+
 export default function Blogs() {
   const {isDark} = useContext(StyleContext);
   const [mediumBlogs, setMediumBlogs] = useState([]);
@@ -44,7 +45,7 @@ export default function Blogs() {
       getProfileData();
     }
   }, []);
-  if (!blogSection.display) {
+  if (!blogSection.display || !blogSection.displayMediumBlogs) {
     return null;
   }
   return (
